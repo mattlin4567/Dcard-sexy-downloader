@@ -23,7 +23,7 @@ $ python setup.py py2exe
 
 °õ¦æÀÉ¤U¸ü(Windows only)
 
-[Executable file](https://mega.nz/#!yRYwAIDJ)
+[Executable file](https://mega.nz/#!yRYwAIDJ!KgnCP6T8du5i3A6reC1RhllnY_7l-IDiYTf-m29wCyQ)
 
 License
 ----

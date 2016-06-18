@@ -1,3 +1,4 @@
+import urllib.error
 from urllib.request import urlopen
 import sys, re, os, time, queue, threading, json
 urlCounter = 0
@@ -24,18 +25,23 @@ def startThreads():
         threads.append(t)
 def getUrls(url):
     global urlCounter
-    resPage = urlopen(url)
-    jsonData = json.loads(resPage.read().decode().translate(non_bmp_map))
-    lastUrl = jsonData[len(jsonData)-1]['id']
-    for post in jsonData:
-        urlCounter += 1
-        if post['pinned'] is False:
-            if re.search("圖", post['title']):
-                if post['gender'] is 'M':
-                    if re.search("女", post['title']):
-                            addHistoryUrl(str(post['id']))
-                else:
-                    addHistoryUrl(str(post['id']))
+    try:
+        resPage = urlopen(url)
+        jsonData = json.loads(resPage.read().decode().translate(non_bmp_map))
+        lastUrl = jsonData[len(jsonData)-1]['id']
+        for post in jsonData:
+            urlCounter += 1
+            if post['pinned'] is False:
+                if re.search("圖", post['title']):
+                    if post['gender'] is 'M':
+                        if re.search("女", post['title']):
+                                addHistoryUrl(str(post['id']))
+                    else:
+                        addHistoryUrl(str(post['id']))
+    except urllib.error.URLError as e:
+        print(e)
+        print("Connection error, please check you internet")
+
     if urlCounter==30:
         print("goto next page")
         nextPage = "https://www.dcard.tw/_api/forums/sex/posts?popular=true&before="+str(lastUrl)
