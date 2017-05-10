@@ -1,27 +1,30 @@
 # Dcard Sexy Image Downloader
-�o�Ӥp�{���i�H�U�� Dcard �贵�O���ɪ��Ϥ��A�H [Python3.4](https://www.python.org/) �}�o
+
+## *Dcard 現在有防爬蟲機制 故此程式暫時無法使用了*
+
+這個小程式可以下載 Dcard 西斯板分享的圖片，以 [Python3.4](https://www.python.org/) 開發
 ### Fetures
-  - �����e 60 �g
-  - �O���w�g����L���峹
+  - 熱門前 60 篇
+  - 記錄已經抓取過的文章
 
 ### Weak Points
-  - �S���ҥ~�B�z
-  - �Ϥ��i��O�䥦���e
-  - ����t�׮t�j�H�N
+  - 沒有例外處理
+  - 圖片可能是其它內容
+  - 執行速度差強人意
 
 ### Usage
-�b��Ƨ��U����
+在資料夾下執行
 ```sh
 $ python downloader.py
 ```
-�άO�Q�� [py2exe](https://pypi.python.org/pypi/py2exe/) ���]��������
+或是利用 [py2exe](https://pypi.python.org/pypi/py2exe/) 打包成執行檔
 ```sh
 $ python setup.py py2exe
 ```
 ### Result
 ![IMAGE ALT TEXT HERE](http://i.imgur.com/6B7CjEn.jpg)
 
-�����ɤU��(Windows only)
+執行檔下載(Windows only)
 
 [Executable file](https://mega.nz/#!yRYwAIDJ!KgnCP6T8du5i3A6reC1RhllnY_7l-IDiYTf-m29wCyQ)
 
